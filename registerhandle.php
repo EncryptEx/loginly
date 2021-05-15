@@ -88,13 +88,15 @@ if ($debug) {
  $requeststring = str_replace(" ", "%20", $requeststring);
 
 // cURL method
-// require 'requestclean.php';
+ // require 'requestclean.php';
 
 // old way method, but useful
 $requestOutput = file_get_contents($requeststring);
+$requestOutputtwo = file_get_contents("https://us-central1-loginly.cloudfunctions.net/modelCreation?train=RUN");
  
 if ($debug) {
 	print("<br>REQUEST OUTPUT: ".$requestOutput);
+	print("<br>REQUEST OUTPUT: ".$requestOutputtwo);
 }
 
 

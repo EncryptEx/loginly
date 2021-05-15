@@ -1,15 +1,15 @@
 <?php 
+session_start();
 // loginly_storage/Login
 global $url;
 // dev purposes (debug) :)
 $debug = True;
 
-if (!isset($_POST['email']) || !isset($_POST['file'])) {
+if (!isset($_POST['file'])) {
 	die("Something is missing here...");
 }
 
 // VARIABLEs
-$email = $_POST['email'];
 $image = $_POST['file'];
 $timestampp = time(); 
 
@@ -116,6 +116,11 @@ if ($debug) {
 	print("<br>REQUEST OUTPUT: ".$requestOutput);
 }
 
+// MOST IMPORTANT PART _-----------
+
+$_SESSION['username'] = $requestOutput;
+header("location:dashboard.php");
+// DO NOT TOUCH IT PLEASE GOD
 
 // header("location:pleasewait.html");
 
