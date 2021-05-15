@@ -8,11 +8,17 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="css/styles.css">
 <!-- icons -->
 <script src="https://kit.fontawesome.com/df57820da4.js" crossorigin="anonymous"></script>
 
   <!-- animate.style to animate the title -->
   <link    rel="stylesheet"    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"  />
+
+  <!-- camera  -->
+  <script type="text/javascript" src="https://unpkg.com/webcam-easy/dist/webcam-easy.min.js"></script>
+
 </head>
 <body>
 
@@ -45,7 +51,11 @@
             <input type="email" class="form-control" id="email" placeholder="Enter email" name="email"> 
         </div>
         <div>
-            <button type="button" class="m-3 btn-secondary">Take a Photo <b style="color:red;">*</b></button>
+            <label>Take a Photo: <b style="color:red;">*</b></label><br>
+            <p id="errorcamera" class="error"></p>
+            <video class="cameradisplay" id="webcam" autoplay playsinline width="640" height="480"></video>
+            <canvas id="canvas" class="d-none"></canvas>
+            <audio id="snapSound" src="audio/snap.wav" preload = "auto"></audio>
         </div>
         <div class="form-group form-check">
             <label class="m-3 form-check-label">
@@ -66,6 +76,18 @@
             memorizing lengthy passcodes.
         </p>
 </div>
+<script src="js/camera.js"></script>
+<script type="text/javascript">
+  
 
+  webcam.start()
+   .then(result =>{
+      console.log("webcam started");
+   })
+   .catch(err => {
+       document.getElementById('errorcamera').innerHTMl = "Permission denied to camera. Please allow it to login in"
+       console.log(err);
+   });
+</script>
 </body>
 </html>

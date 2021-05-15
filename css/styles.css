@@ -9,3 +9,7 @@ span[data-toggle="tooltip"] {
 .correct {
 	background-color: #04AA6D !important;
 }
+
+.cameradisplay {
+	border: 1px solid black;
+}
