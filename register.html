@@ -39,9 +39,14 @@
             <label for="email">Email:</label>
             <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
         </div>
-        <div class="m-3 form-group">
-            <label class="tooltip" for="email">Please upload 10 images of your face (must appear clearly):</label>
-            <span class="tooltiptext">We need 10 images to train our Artificial Intelligence system to be able to recognize you when logging in.</span>
+        
+            <span data-toggle="tooltip" data-placement="right" title="We need 10 images to train our Artificial Intelligence system to be able to recognize you when logging in.">Please upload 10 images of your face (must appear clearly):</span><br><br>
+            <!-- tooltip bs4 function -->
+            <script>
+            $(document).ready(function(){
+              $('[data-toggle="tooltip"]').tooltip();   
+            });
+            </script>
             <!-- used emmet to generate this: div.uploaddir>((button{Insert Image $ here})+(input[type="file" name="image$"].form-control#image$))*10 -->
             <div class="uploaddir"><button class="btn-file-input">Insert Image 1 here</button><input type="file" name="image1" class="form-control" id="image1"></div>
             <div class="uploaddir"><button class="btn-file-input">Insert Image 2 here</button><input type="file" name="image2" class="form-control" id="image2"></div>
@@ -54,7 +59,7 @@
             <div class="uploaddir"><button class="btn-file-input">Insert Image 9 here</button><input type="file" name="image9" class="form-control" id="image9"></div>
             <div class="uploaddir"><button class="btn-file-input">Insert Image 10 here</button><input type="file" name="image10" class="form-control" id="image10"></div>
            
-        </div>
+        
         <div>
             <button type="button" class="m-3 btn-secondary">Submit</button>
         </div>
@@ -68,7 +73,7 @@
 </div>
 
 <div class="container">
-    <p>Don't have an account yet? <a href="#">Create one here.</a></p>
+    <p>Have already an account? <a href="login.html">Login here.</a></p>
 </div>
 <br>
 <div class="container">
