@@ -4,12 +4,14 @@ global $url;
 // dev purposes (debug) :)
 $debug = True;
 
-if (!isset($_POST['email'])) {
+if (!isset($_POST['email']) || !isset($_POST['file'])) {
 	die("Something is missing here...");
 }
 
 // VARIABLEs
 $email = $_POST['email'];
+$image = $_POST['file'];
+$timestampp = time(); 
 
 
 # Includes the autoloader for libraries installed with composer
@@ -32,16 +34,10 @@ use Google\Cloud\Storage\StorageClient;
 //     }
 // }
 
-
-
-
-
-
- 
  // Count total files
- $countfiles = count($_FILES['file']['name']);
+ // $countfiles = count($_FILES['file']['name']);
 
-die(var_dump($countfiles));
+// die(var_dump($_POST['file']));
  // Loop
 
 function upload_object($bucketName, $objectName, $source)
@@ -62,22 +58,45 @@ function upload_object($bucketName, $objectName, $source)
 
 
 // check if is a list ? ¿?
-$filename = $_FILES['file']['name'][0];
+$filename = "login_".$timestampp.".txt";
+$myfile = fopen($filename, "w") or die("cound't create the file.");
+fclose($myfile);
+// clean last time was opened
+unlink($filename);
+// now we can open it
 
-// $filevalue = $_FILES['file']['tmp_name'][$i];
-move_uploaded_file($_FILES['file']['tmp_name'][0],'upload/'.$filename);
-$finalpath = "Login/".$name."_".$email."/".$filename;
 
-$sourcef = "./upload/".$filename;
+$myfile1 = fopen($filename, "w")or die("cound't create the file.");
+
+fwrite($myfile1, $image);
+fclose($myfile1);
+ 
+
+$finalpath = "Login/".$filename;
+
+$sourcef = $filename;
+
+
+//$movereuslt = rename($filename,"logindump/".$filename);
+
+
+//if($movereuslt) {	die("couldn't move the file");}
+
+
+
+
+
+
 upload_object("loginly_storage", $finalpath, $sourcef);
 
 
-$requeststring = "https://us-central1-loginly.cloudfunctions.net/cleanData?";
+// $requeststring = "https://us-central1-loginly.cloudfunctions.net/modelCreation?train=RUN";
+$requeststring = "https://us-central1-loginly.cloudfunctions.net/login?txtFile=".$filename;
 
-$requeststring .= "img1"."=".$filename."&";
+// $requeststring .= "img1"."=".$filename."&";
 
 
-$requeststring .= "name=".$name."&email=".$email;
+// $requeststring .= "&email=".$email;
 
 
 if ($debug) {
@@ -91,7 +110,7 @@ if ($debug) {
 // require 'requestclean.php';
 
 // old way method, but useful
-// $requestOutput = file_get_contents($requeststring);
+$requestOutput = file_get_contents($requeststring);
  
 if ($debug) {
 	print("<br>REQUEST OUTPUT: ".$requestOutput);

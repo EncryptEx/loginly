@@ -45,7 +45,7 @@
 
 <div class="container">
     <h3>Log-in Information</h3>
-    <form action="loginhandle.php">
+    <form action="loginhandle.php" method="POST" enctype='multipart/form-data'>
         <div class="m-3 form-group">
             <label for="email">Email: <b style="color:red;">*</b></label>
             <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required=""> 
@@ -59,6 +59,7 @@
             <audio id="snapSound" src="audio/snap.wav" preload = "auto"></audio>
         </div>
         <br>
+        <input type="hidden" id="hiddenvalue" name="file">
         <button id="snapbutton" type="button" style="display: none;" class="btn btn-primary" onclick="snap();"><i class="fas fa-camera"></i>  Snap!</button>
         <img id="download-photo"></img>
         <button type="button" style="display: none; margin-top: 15px;" class="btn btn-warning" id="turnonagaincamera" onclick="turnon();"><i class="fas fa-redo"></i>  Repeat</button>
@@ -97,7 +98,8 @@ function snap() {
   document.querySelector('#canvas').style.display = "none";
   document.querySelector('#turnonagaincamera').style.display = "block";
   document.querySelector('#loginbutton').disabled = false;
-  
+  // important to pass value to php 
+  document.querySelector('#hiddenvalue').value = picture;
   return picture;
 
 }

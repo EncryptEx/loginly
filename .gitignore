@@ -1,3 +1,5 @@
+# script ignore
+logindump/*
 
 # php ignore section starts
 
