@@ -48,7 +48,7 @@
     <form action="/action_page.php">
         <div class="m-3 form-group">
             <label for="email">Email: <b style="color:red;">*</b></label>
-            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email"> 
+            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required=""> 
         </div>
         <div>
             <label>Take a Photo: <b style="color:red;">*</b></label><br>
@@ -67,7 +67,7 @@
                 <input class="form-check-input" type="checkbox" name="remember">
                 Remember me </label>
         </div>
-        <button type="submit" class="btn btn-success"> Log In</button>
+        <button type="submit" id="loginbutton" class="btn btn-success"> Log In</button>
     </form>
 </div>
 
@@ -90,17 +90,20 @@
 function snap() {
 
   var picture = webcam.snap();
+  document.querySelector('#download-photo').style.display = "block";
   document.querySelector('#download-photo').src = picture;
   document.querySelector('#snapbutton').style.display = "none";
   document.querySelector('#webcam').style.display = "none";
   document.querySelector('#canvas').style.display = "none";
   document.querySelector('#turnonagaincamera').style.display = "block";
+  document.querySelector('#loginbutton').disabled = false;
   
   return picture;
 
 }
 
 function turnon(){
+       document.querySelector('#loginbutton').disabled = true;
   webcam.start()
    .then(result =>{
       console.log("webcam started");
@@ -109,6 +112,8 @@ function turnon(){
        document.querySelector('#webcam').style.display = "block";
        document.querySelector('#canvas').style.display = "block";
        document.querySelector('#loading').style.display = "none";
+       document.querySelector('#download-photo').style.display = "none";
+       document.querySelector('#loginbutton').disabled = true;
    })
    .catch(err => {
        document.getElementById('errorcamera').innerHTML = "Permission denied to camera. Please allow it to login in"
