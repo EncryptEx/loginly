@@ -1,3 +1,11 @@
 span[data-toggle="tooltip"] {
 	border-bottom: 1px dotted black !important;
 }
+
+.error {
+	background-color: #BB0000 !important;
+}
+
+.correct {
+	background-color: #04AA6D !important;
+}

@@ -1,6 +1,8 @@
 /*
 	By Osvaldas Valutis, www.osvaldas.info
 	Available for use under the MIT License
+	
+	Modified on 15/5/21 by EncryptEx
 */
 
 'use strict';
@@ -16,15 +18,15 @@
 		input.addEventListener( 'change', function( e )
 		{
 			var fileName = '';
-			if( this.files && this.files.length > 1 )
+			if( this.files && this.files.length > 9 && this.files.length < 11) {
 				fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
-			else
-				fileName = e.target.value.split( '\\' ).pop();
-
-			if( fileName )
 				label.querySelector( 'span' ).innerHTML = fileName;
-			else
-				label.innerHTML = labelVal;
+				label.classList.remove("error");
+				label.classList.add("correct");
+			} else {
+				label.querySelector( 'span' ).innerHTML = "Please select 10 images.";
+				label.classList.add("error");
+			}
 		});
 
 		// Firefox bug fix
