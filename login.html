@@ -118,6 +118,7 @@ function turnon(){
    .catch(err => {
        document.getElementById('errorcamera').innerHTML = "Permission denied to camera. Please allow it to login in"
        document.querySelector('#turnonagaincamera').style.display = "block";
+       document.querySelector('#loading').style.display = "none";
        console.log(err);
    });
 }
