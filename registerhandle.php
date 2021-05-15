@@ -3,6 +3,10 @@ global $url;
 // dev purposes (debug) :)
 $debug = True;
 
+if (!isset($_POST['name']) || !isset($_POST['email'])) {
+	die("Something is missing here...");
+}
+
 // VARIABLEs
 $name  = $_POST['name'];
 $email = $_POST['email'];
@@ -29,9 +33,7 @@ use Google\Cloud\Storage\StorageClient;
 // }
 
 
-if (!isset($_POST['name']) || !isset($_POST['email'])) {
-	die("Something is missing here...");
-}
+
 
 
 
@@ -94,5 +96,9 @@ $requestOutput = file_get_contents($requeststring);
 if ($debug) {
 	print("<br>REQUEST OUTPUT: ".$requestOutput);
 }
+
+
+header("location:pleasewait.html");
+
  ?>
  
