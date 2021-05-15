@@ -1,1 +1,3 @@
-/*USELESS*/
+span[data-toggle="tooltip"] {
+	border-bottom: 1px dotted black !important;
+}
