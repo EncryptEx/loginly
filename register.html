@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Loginly - Sign Up</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1", shrink-to-fit=no>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- icons -->
+  <script src="https://kit.fontawesome.com/df57820da4.js" crossorigin="anonymous"></script>
+
+
+  <link rel="stylesheet" href="css/upload.css">
+  <link rel="stylesheet" href="css/styles.css">
+
+   <!-- animate.style to animate the title -->
+  <link    rel="stylesheet"    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"  />
+</head>
+<body>
+
+<nav class="justify-content-end fixed-top navbar navbar-expand-sm bg-dark">
+    <ul class="nav">
+      <li class="nav-item">
+          <!-- we need to update this -->
+            <a class="text-light nav-link" href="https://github.com/EncryptEx/facial-messaging"><i class="fab fa-osi"></i>    Contribute</a> 
+        </li>
+        <li class="nav-item">
+          <!-- we need to update this -->
+            <a class="text-light nav-link" href="https://live.hackupc.com">Contact</a> 
+        </li>
+        <li class="nav-item">
+            <a class="text-light nav-link" href="login.html">Log In</a>
+        </li>
+    </ul>
+</nav>
+
+<div class="bg-info jumbotron text-center">
+  <h1 class="mt-4 display-1 animate__animated animate__bounce" >Loginly</h1>
+  <p class="mt-4">Secure messaging with facial recognition software logins</p> 
+</div>
+
+<div class="container">
+    <h3>Sign Up Information</h3>
+    <form action="registerhandle.php" method='post' enctype='multipart/form-data'>
+        <div class="m-3 form-group">
+            <label for="name">Name: <b style="color:red;">*</b></label>
+            <input type="text" class="form-control" id="name" placeholder="Enter your name" name="name" required="">
+        </div>
+        <div class="m-3 form-group">
+            <label for="email">Email: <b style="color:red;">*</b></label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required="">
+        </div>
+        
+            <span data-toggle="tooltip" data-placement="right" title="We need 10 images to train our Artificial Intelligence system to be able to recognize you when logging in.">Please upload 10 images of your face (must appear clearly): <b style="color:red;">*</b></span><br><br>
+            <!-- tooltip bs4 function -->
+            <script>
+            $(document).ready(function(){
+              $('[data-toggle="tooltip"]').tooltip();   
+            });
+            </script>
+            <!-- used emmet to generate this: div.row>(div.col-sm-3>(div.uploaddir>((button{Insert Image $ here})+(input[type="file" name="image$"].form-controlfile#image$)))*4)*3 -->
+            <div class="box">
+          <input accept="image/jpg" required="" style="display: none;" name="file[]" type="file"  id="file-1" class="inputfile uploadstyle" data-multiple-caption="{count} files selected" multiple />
+          <label for="file-1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> <span>Choose 10 images&hellip;</span></label>
+        </div>
+
+       
+            <!-- script to display image's name -->
+        <div>
+            <button type="submit" class="m-3 btn-secondary">Submit</button>
+        </div>
+
+        <!-- <div class="form-group form-check">
+            <label class="m-3 form-check-label">
+                <input class="form-check-input" type="checkbox" name="remember">
+                Remember me </label>
+        </div> -->
+    </form>
+</div>
+
+<div class="container">
+    <p>Have already an account? <a href="login.html">Login here.</a></p>
+</div>
+<br>
+<div class="container">
+    <h3>How do I log-in to Loginly?</h3>
+        <p>Rather than using a password to sign in, Loginly uses facial recognition
+            software to allow for secure access to your account without the need for
+            memorizing lengthy passcodes.
+        </p>
+</div>
+<script src="js/custom-file-input.js"></script>
+</body>
+</html>

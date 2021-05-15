@@ -4,7 +4,7 @@ global $url;
 // dev purposes (debug) :)
 $debug = True;
 
-if (!isset($_POST['name']) || !isset($_POST['email'])) {
+if (!isset($_POST['email'])) {
 	die("Something is missing here...");
 }
 
