@@ -8,11 +8,20 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- icons -->
+<script src="https://kit.fontawesome.com/df57820da4.js" crossorigin="anonymous"></script>
+
+  <!-- animate.style to animate the title -->
+  <link    rel="stylesheet"    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"  />
 </head>
 <body>
 
 <nav class="justify-content-end fixed-top navbar navbar-expand-sm bg-dark">
     <ul class="nav">
+      <li class="nav-item">
+          <!-- we need to update this -->
+            <a class="text-light nav-link" href="https://github.com/EncryptEx/facial-messaging"><i class="fab fa-osi"></i>   Contribute</a> 
+        </li>
         <li class="nav-item">
         	 <!-- we need to update this -->
             <a class="text-light nav-link" href="https://live.hackupc.com">Contact</a>
@@ -24,7 +33,7 @@
 </nav>
 
 <div class="bg-info jumbotron text-center">
-  <h1 class="mt-4 display-1">Loginly</h1>
+  <h1 class="mt-4 display-1 animate__animated animate__bounce">Loginly</h1>
   <p class="mt-4">Secure messaging with facial recognition software logins</p> 
 </div>
 
@@ -32,11 +41,11 @@
     <h3>Log-in Information</h3>
     <form action="/action_page.php">
         <div class="m-3 form-group">
-            <label for="email">Email:</label>
-            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+            <label for="email">Email: <b style="color:red;">*</b></label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email"> 
         </div>
         <div>
-            <button type="button" class="m-3 btn-secondary">Take a Photo</button>
+            <button type="button" class="m-3 btn-secondary">Take a Photo <b style="color:red;">*</b></button>
         </div>
         <div class="form-group form-check">
             <label class="m-3 form-check-label">
