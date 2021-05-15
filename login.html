@@ -52,7 +52,7 @@
         </div>
         <div>
             <label>Take a Photo: <b style="color:red;">*</b></label><br>
-            <p id="errorcamera" class="error"></p>
+            <p id="errorcamera" class="errorcam"></p>
             <div id="loading"><img height="20" width="20" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.wpfaster.org%2Fwp-content%2Fuploads%2F2013%2F06%2Floading-gif.gif&f=1&nofb=1" alt=""> Waiting for camera permision...</div>
             <video style="display: none;" class="cameradisplay" id="webcam" autoplay playsinline width="640" height="480"></video>
             <canvas style="display: none;" id="canvas" class="d-none"></canvas>
@@ -117,6 +117,7 @@ function turnon(){
    })
    .catch(err => {
        document.getElementById('errorcamera').innerHTML = "Permission denied to camera. Please allow it to login in"
+       document.querySelector('#turnonagaincamera').style.display = "block";
        console.log(err);
    });
 }

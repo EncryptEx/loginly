@@ -6,6 +6,10 @@ span[data-toggle="tooltip"] {
 	background-color: #BB0000 !important;
 }
 
+.errorcam {
+	color: #BB0000 !important;
+}
+
 .correct {
 	background-color: #04AA6D !important;
 }
