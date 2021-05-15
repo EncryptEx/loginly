@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Loginly - Sign Up</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1", shrink-to-fit=no>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="justify-content-end fixed-top navbar navbar-expand-sm bg-dark">
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="text-light nav-link" href="#">Contact</a>
+        </li>
+        <li class="nav-item">
+            <a class="text-light nav-link" href="#">Sign up</a>
+        </li>
+    </ul>
+</nav>
+
+<div class="bg-info jumbotron text-center">
+  <h1 class="mt-4 display-1">Loginly</h1>
+  <p class="mt-4">Secure messaging with facial recognition software logins</p> 
+</div>
+
+<div class="container">
+    <h3>Sign Up Information</h3>
+    <form action="/action_page.php">
+        <div class="m-3 form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter your name" name="name">
+        </div>
+        <div class="m-3 form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+        </div>
+        <div class="m-3 form-group">
+            <label class="tooltip" for="email">Please upload 10 images of your face (must appear clearly):</label>
+            <span class="tooltiptext">We need 10 images to train our Artificial Intelligence system to be able to recognize you when logging in.</span>
+            <!-- used emmet to generate this: div.uploaddir>((button{Insert Image $ here})+(input[type="file" name="image$"].form-control#image$))*10 -->
+            <div class="uploaddir"><button class="btn-file-input">Insert Image 1 here</button><input type="file" name="image1" class="form-control" id="image1"></div>
+            <div class="uploaddir"><button class="btn-file-input">Insert Image 2 here</button><input type="file" name="image2" class="form-control" id="image2"></div>
+            <div class="uploaddir"><button class="btn-file-input">Insert Image 3 here</button><input type="file" name="image3" class="form-control" id="image3"></div>
+            <div class="uploaddir"><button class="btn-file-input">Insert Image 4 here</button><input type="file" name="image4" class="form-control" id="image4"></div>
+            <div class="uploaddir"><button class="btn-file-input">Insert Image 5 here</button><input type="file" name="image5" class="form-control" id="image5"></div>
+            <div class="uploaddir"><button class="btn-file-input">Insert Image 6 here</button><input type="file" name="image6" class="form-control" id="image6"></div>
+            <div class="uploaddir"><button class="btn-file-input">Insert Image 7 here</button><input type="file" name="image7" class="form-control" id="image7"></div>
+            <div class="uploaddir"><button class="btn-file-input">Insert Image 8 here</button><input type="file" name="image8" class="form-control" id="image8"></div>
+            <div class="uploaddir"><button class="btn-file-input">Insert Image 9 here</button><input type="file" name="image9" class="form-control" id="image9"></div>
+            <div class="uploaddir"><button class="btn-file-input">Insert Image 10 here</button><input type="file" name="image10" class="form-control" id="image10"></div>
+           
+        </div>
+        <div>
+            <button type="button" class="m-3 btn-secondary">Submit</button>
+        </div>
+
+        <!-- <div class="form-group form-check">
+            <label class="m-3 form-check-label">
+                <input class="form-check-input" type="checkbox" name="remember">
+                Remember me </label>
+        </div> -->
+    </form>
+</div>
+
+<div class="container">
+    <p>Don't have an account yet? <a href="#">Create one here.</a></p>
+</div>
+<br>
+<div class="container">
+    <h3>How do I log-in to Loginly?</h3>
+        <p>Rather than using a password to sign in, Loginly uses facial recognition
+            software to allow for secure access to your account without the need for
+            memorizing lengthy passcodes.
+        </p>
+</div>
+
+</body>
+</html>
