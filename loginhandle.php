@@ -3,10 +3,10 @@ session_start();
 // loginly_storage/Login
 global $url;
 // dev purposes (debug) :)
-$debug = True;
+$debug = False;
 
 if ($debug) {
-	var_dump($_POST);
+	// var_dump($_POST);
 }
 
 if (!isset($_POST['file'])) {
@@ -119,6 +119,8 @@ $requestOutput = file_get_contents($requeststring);
 if ($debug) {
 	print("<br>REQUEST OUTPUT: ".$requestOutput);
 }
+// cleanunp please
+unlink($filename);
 
 // MOST IMPORTANT PART _-----------
 
@@ -127,6 +129,8 @@ header("location:dashboard.php");
 // DO NOT TOUCH IT PLEASE GOD
 
 // header("location:pleasewait.html");
+
+echo "<script>window.location.href=\"dashboard.php\";</script>";
 
  ?>
  
