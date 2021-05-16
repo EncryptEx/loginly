@@ -5,6 +5,10 @@ global $url;
 // dev purposes (debug) :)
 $debug = True;
 
+if ($debug) {
+	var_dump($_POST);
+}
+
 if (!isset($_POST['file'])) {
 	die("Something is missing here...");
 }
