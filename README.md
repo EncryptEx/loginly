@@ -10,7 +10,11 @@ Inspired by the inefficiency and inconvenience of passwords, **Loginly** transfo
 However, using Loginly, a photo of the user’s face provides a secure and encrypted login confirmation system that is **easily accessed** and **cannot be lost**. 
 ## How we built it
 **Loginly** was created in several steps: front end development where users sign up or login, and the backend development of the facial recognition software as well as the system’s connection to a database to retrieve existing login information. 
+### Backend
+When designing the back end, we wanted to have the utmost security while also having the fastest speeds. **Google cloud functions** allowed for us to use intelligent AI libraries authored by `Python` while also integrating in a nice seamless front-end fashion. they also allow for intelligent integration with the database. The data is stored in an encrypted format open the GCP storage which prevents hackers to access private images. In order to access the database, one needs a specific key which further prevent security.
 ## Challenges we ran into
+### Problems
+When building the AI model for the facial recognition I first used `face_recognition` library which allowed me to quickly identify nature points on a face to detect the identity. the problem was when integrating this with the GCP function it resulted in an error because the library is not supported which is why I used `LBHR` from `cv2` which is part of their `face cascade classifier` program. this allowed for a intelligent and accurate facial recognition. As of prelimerary tests the accuracy is upward of **98%**.
 ### Experience and Areas of Expertise
 The biggest challenge we had with Loginly was that it was a project outside of our areas of expertise. Some of us had never done front end work before, while for others of us we had little experience with accessing and using databases. Our team also consisted of both experienced coders and those who've just begun their coding journey, so time had to be invested into not just doing the project but learning various concepts from the bottom up. 
 ### Communication and Team Building
