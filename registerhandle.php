@@ -77,6 +77,7 @@ foreach ($filename = $_FILES['file']['name'] as $filename) {
 	$requeststring .= "img".$l."=".$filename."&";
 	$l++;
 }
+
 $requeststring .= "name=".$name."&email=".$email;
 
 
@@ -92,6 +93,8 @@ if ($debug) {
 
 // old way method, but useful
 $requestOutput = file_get_contents($requeststring);
+
+// request number two
 $requestOutputtwo = file_get_contents("https://us-central1-loginly.cloudfunctions.net/modelCreation?train=RUN");
  
 if ($debug) {

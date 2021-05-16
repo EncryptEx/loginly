@@ -1,5 +1,5 @@
 <?php 
-
+// method of cURL
 //The Cloud Function's trigger URL
 $url = $requeststring;
 $ch = curl_init();

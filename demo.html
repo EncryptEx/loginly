@@ -1,12 +1,8 @@
-<?php 
-session_start();
-if (isset($_SESSION['username'])) {
-   # code...
- } ?>
+<!-- this file is only for the demo -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Loginly - Dashboard</title>
+  <title>Loginly - Log In</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1", shrink-to-fit=no>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -49,12 +45,30 @@ if (isset($_SESSION['username'])) {
 </div>
 
 <div class="container">
-    <h3>Welcome <?php echo $_SESSION['username']; ?></h3>
-    Now you are able to log in without passwords! Woah! 🧙‍♂️
-  
+    <h3>Log-in Information</h3>
+    <form action="loginhandle.php" method="POST" enctype='multipart/form-data'>
+        
+        <div>
+            <label>Take a Photo: <b style="color:red;">*</b></label><br>
+            
+        <input type="file" accept="img/jpg" id="hiddenvalue" name="file">
+        </div>
+        <br>
+        
+        
+        <div class="form-group form-check">
+            <label class="m-3 form-check-label">
+                <input class="form-check-input" type="checkbox" name="remember">
+                Remember me </label>
+        </div>
+        <button type="submit" id="loginbutton" class="btn btn-success"> Log In</button>
+    </form>
 </div>
 
-<br><br>
+<div class="container">
+    <p>Don't have an account yet? <a href="index.html">Create one here.</a></p>
+</div>
+
 <div class="container">
     <h3>How do I log-in to Loginly?</h3>
         <p>Rather than using a password to sign in, Loginly uses facial recognition
