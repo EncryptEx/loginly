@@ -1,3 +1,15 @@
+<p align="center"><a href="#"><img src="https://maxcdn.icons8.com/Share/icon/ultraviolet/Business/id_card1600.png" alt="Hat" height="60"/></a></p>
+<h1 align="center">Loginly</h1>
+<p align="center">Loginly transforms the traditional approach to login systems into a secure yet easily accessible login confirmation system.</p>
+<p align="center">
+	<img src="https://img.shields.io/github/contributors/EncryptEx/facial-messaging"/>
+	<img src="https://img.shields.io/github/repo-size/EncryptEx/facial-messaging"/>
+	<img src="https://img.shields.io/github/languages/top/EncryptEx/facial-messaging"/>
+	<img src="https://img.shields.io/github/last-commit/EncryptEx/facial-messaging"/>
+	<img src="https://img.shields.io/badge/Hackathon-HackUPC2021-green"/>
+</p>
+
+
 ## Inspiration
 Inspired by the inefficiency and inconvenience of passwords, **Loginly** transforms the traditional approach to login systems into a secure yet easily accessible login confirmation system.
 ## What it does
